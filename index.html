@@ -1,0 +1,190 @@
+<!-- Realizado por: Christian Fortunato(173958) y Ernesto Speranza(198426) -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Este es el Obligatorio de programacion 1 de Ernesto Speranza & Christian Fortunato, Bienvenido a compras compartidas">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Obligatorio Programacion 1, Compras compartidas">
+    <meta name="author" content="Ernesto Speranza(198426) & Christian Fortunato(173958)">
+
+    <!-- CSS y Fonts -->
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="icon" href="img/icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,900&family=Open+Sans:ital,wght@0,400;0,800;1,400&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>Compras Compartidas</title>
+
+    <!-- JS Scripts -->
+    <script src="js/clases.js"></script>
+    <script src="js/funciones.js"></script>
+
+    <!-- Cargar Google Charts -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {
+            'packages': ['corechart']
+        })
+    </script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div id="container-nav">
+            <div id="imagen-nav"></div>
+        </div>
+    </header>
+
+    <!-- Barra de navegación -->
+    <nav>
+        <a href="#seccion-personas"><img src="img/nav/personas.png" class="circular-img" alt="Personas"></a>
+        <a href="#seccion-compras"><img src="img/nav/compras.png" class="circular-img" alt="Compras"></a>
+        <a href="#seccion-consultas"><img src="img/nav/consultas.png" class="circular-img" alt="Consultas"></a>
+        <a href="https://www.instagram.com/" target="_blank"><img src="img/nav/instagram.jpeg" class="circular-img" alt="Instagram"></a>
+        <a href="https://www.facebook.com/" target="_blank"><img src="img/nav/facebook.jpeg" class="circular-img" alt="Facebook"></a>
+        <a href="https://www.linkedin.com/" target="_blank"><img src="img/nav/linkedin.jpeg" class="circular-img" alt="Linkedin"></a>
+    </nav>
+
+
+    <main>
+
+        <!-- Inicio Personas -->
+        <section id="seccion-personas">
+            <h2>Personas</h2>
+
+            <!-- Formulario Registo -->
+            <h3>Registro</h3>
+
+
+            <form action="#" method="POST" id="personas-registro-form">
+                <label for="nombre">Nombre:</label>
+                <input class="redondo-input" type="text" name="nombre" placeholder="Nombre" id="nombre" minlength="1" maxlength="20" size="30" required>
+                <label for="seccion">Secci&oacute;n:</label>
+                <input class="redondo-input" type="number" name="seccion" placeholder="Sección" id="seccion" min="1" max="8" required>
+                <label for="email">Mail:</label>
+                <input class="redondo-input" type="email" name="email" placeholder="Mail" id="email" size="30" required>
+                <input type="button" class="redondo-btn" value="Agregar" id="personas-registro-btn">
+            </form>
+
+
+            <!-- Div Visualización -->
+            <h3>Visualizaci&oacute;n</h3>
+            <ul id="personas-visualizacion">
+            </ul>
+            <!-- Boton a Top de página -->
+            <a href="#header"><img src="img/top-btn.png" alt="Superior de página" class="top-btn"></a>
+
+        </section>
+        <!-- Fin Personas -->
+
+        <!-- Inicio Compras -->
+        <section id="seccion-compras">
+
+            <h2>Compras</h2>
+
+            <!-- Registro de compras -->
+            <h3>Registro</h3>
+
+            <form action="#" method="POST" id="compras-registro-form">
+                <label for="comprador-select">Hecha Por:</label>
+                <select id="comprador-select" class="redondo-input-selector" name="comprador">
+                </select>
+
+                <label for="descripcion">Descripci&oacute;n:</label>
+                <input class="redondo-input" type="text" name="descripcion" placeholder="Descripción" id="descripcion-compra" maxlength="40" size="30%" required>
+
+                <label for="monto">Monto:</label>
+                <input class="redondo-input" type="number" name="monto" id="monto-compra" required>
+                <div></div>
+                <div></div>
+                <p>Corresponde a:</p>
+                <div id="comprador-checkbox">
+                </div>
+                <input type="button" class="redondo-btn" value="Agregar" id="compras-registro-btn">
+                <span id="formError"></span>
+            </form>
+
+            <!-- Reintegros de compras -->
+
+            <h3>Reintegro</h3>
+            <form action="#" method="POST" id="compras-reintegros-form">
+                <label for="compras-reintegros">Se reintegra la compra:</label>
+                <select id="compras-reintegros" class="redondo-input-selector" name="compra">
+                </select>
+                <input type="button" class="redondo-btn" value="Reintegro" id="compras-reintegros-form-btn">
+            </form>
+
+            <!-- Tabla con Datos -->
+            <h3>Visualizaci&oacute;n</h3>
+            <span>Orden:</span>
+            <input type="radio" id="orden-numero" name="orden-tabla-reintegro" value="numero" checked>
+            <label for="orden-numero">n&uacute;mero</label>
+            <input type="radio" id="orden-nombre" name="orden-tabla-reintegro" value="nombre">
+            <label for="orden-nombre">nombre</label><br>
+
+            <div id="div-tabla">
+                <table id="compras-reintegros-tabla">
+                </table>
+            </div>
+
+            <!-- Boton a Top de página -->
+            <a href="#header"><img src="img/top-btn.png" alt="Superior de página" class="top-btn"></a>
+        </section>
+        <!-- Fin Compras -->
+
+
+        <!-- Inicio Consultas -->
+        <section id="seccion-consultas">
+            <h2>Consultas</h2>
+
+            <!-- Pagos/Cobros por persona -->
+            <h3>Pagos/Cobros pendientes por persona</h3>
+            <form action="#" method="GET">
+                <label for="pagos-cobros">Persona:</label>
+                <select class="redondo-input-selector" name="pagos-cobros" id="pagos-cobros">
+                </select>
+                <input type="button" class="redondo-btn-inline" value="Consultar Totales" id="consultar-totales-btn">
+
+                <p id="sumaParticipacion"></p>
+                <p id="sumaResponsable"></p>
+            </form>
+
+
+            <!-- Descripción -->
+            <h3>Descripci&oacute;n</h3>
+            <form action="#" method="GET">
+                <label for="busqueda-compras">Palabra a buscar:</label>
+                <input class="redondo-input" type="text" name="busqueda-compras" id="busqueda-compras" placeholder="Buscar..." size="24" required>
+                <input type="button" class="redondo-btn-inline" value="Consultar compras" id="consultar-compras-btn">
+
+                <h4>Resultado (Se muestra primera coincidencia)</h4>
+                <ul id="busqueda-compras-lista">
+                </ul>
+            </form>
+
+
+            <!-- Grafica -->
+            <div>
+                <h3>Gr&aacute;fica</h3>
+                <p>Se muestra cantidad de compras totales por rando de $100(0-99, 100-199, etc)
+                    <input type="button" class="redondo-btn-inline" value="Graficar" id="graficar-btn">
+            </div>
+            <div id="chart_div"></div>
+            <!-- Boton a Top de página -->
+            <a href="#header"><img src="img/top-btn.png" alt="Superior de página" class="top-btn"></a>
+
+
+        </section>
+        <!-- Fin Consultas -->
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p id="p-footer">Obligatorio de Programacion I - 1er Semestre 2020 - Realizado por: Christian Fortunato y Ernesto Speranza</p>
+    </footer>
+</body>
+
+</html>
