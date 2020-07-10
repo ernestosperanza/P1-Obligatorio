@@ -1,5 +1,3 @@
-/* Realizado por: Christian Fortunato(173958) y Ernesto Speranza(198426) --> */
-
 class Sistema {
     constructor(personas, compras) {
         this.compras = compras;
